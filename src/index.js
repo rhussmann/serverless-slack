@@ -21,7 +21,7 @@ class Slack extends EventEmitter {
    * @param {Function} callback - The Lambda callback
    */
   handler(event, context, callback) {     
-    switch(event.method) {
+    switch(event.httpMethod) {
       case "GET": this.oauth(event, context, callback); break;
       case "POST": this.event(event, context, callback); break;
     }
